@@ -55,7 +55,9 @@ https://github.com/x1111101101/hongong-C/blob/main/chapter02/second.c
 
 ### 진수 별 출력
 %o: 8진수
+
 %x: 16진수 소문자
+
 %X: 16진수 대문자
 
 ### 지수 형태로 표현
