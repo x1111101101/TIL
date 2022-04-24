@@ -45,4 +45,6 @@ goot -> goo -> good -> good chance
 구글링 해보니 입력 받을 땐 double은 %lf로 구분해줘야 하지만, 출력할 땐 %f, %lf 모두 사용해도 차이가 없다고 한다.
 http://gigglehd.com/zbxe/10649472
 
+### 소숫점 n째 자리 이하에서 반올림하여 출력하기(소숫점 n째 자리 까지만 출력): %.nlf
+https://github.com/x1111101101/hongong-C/blob/main/chapter02/second.c
 
