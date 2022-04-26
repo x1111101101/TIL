@@ -44,4 +44,14 @@ int num1=30, num2=30;
 The size of a "long" integer varies between architectures and operating systems.  
 https://www.intel.com/content/www/us/en/developer/articles/technical/size-of-long-integer-type-on-different-architecture-and-os.html
 
+long long 자료형은 8byte 크기 고정
 
+## 서식 지정자
+%ld: long decimal  
+%lld: long long deciaml  
+%d: decimal  
+%u: unsigned decimal  
+%lu: long unsigned decimal  
+%llu: long long unsigned decimal  
+
+unsigned char, unsigned short는 %d로 충분히 출력되나, unsigned int는 %u를 사용해야하고, unsigned long 은 %lu, unsigned long long은 %llu를 써야한다.
