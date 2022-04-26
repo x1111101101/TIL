@@ -70,3 +70,16 @@ sizeof(int)
 sizeof(num1)
 sizeof num1
 ```
+
+## limits.h
+헤더 파일로 자료형 별 최대/최솟값을 불러올 수 있다.
+```
+#include <limits.h>
+
+int main(void) {
+  printf("%d", INT_MAX);
+  return 0;
+}
+```
+
+오버 플로우 발생 시 최솟값 부터 다시 시작한다. (즉 unsigned는 0 부터)
