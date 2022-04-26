@@ -31,3 +31,17 @@ int, short, long, char: 정수
 float, double: 실수  
 void: 형태가 없는 자료형(포인터를 사용할 때, 함수의 반환값을 표현할 때 등 다양하게 사용됨)
 
+## 한번에 여러개 변수 선언, 할당
+```
+int num1=30, num2=30;
+```
+## 중단점(break point)
+을 활용해서 디버깅을 손쉽게 할 수 있다
+
+## long
+자바의 long와 c의 long에는 차이가 꽤 있다. C에서 long은 아키텍쳐나 운영체제에 따라서 최적으로 사용할 수 있는 크기의 비트수를 가진다.
+
+The size of a "long" integer varies between architectures and operating systems.  
+https://www.intel.com/content/www/us/en/developer/articles/technical/size-of-long-integer-type-on-different-architecture-and-os.html
+
+
