@@ -55,3 +55,18 @@ long long 자료형은 8byte 크기 고정
 %llu: long long unsigned decimal  
 
 unsigned char, unsigned short는 %d로 충분히 출력되나, unsigned int는 %u를 사용해야하고, unsigned long 은 %lu, unsigned long long은 %llu를 써야한다.
+
+## 오버플로우와 언더플로우
+정수형 자료형에서 표현할 수 있는 범위를 넘어서는 수를 저장하게되면 오버/언더플로우가 발생해 최소/최댓값 부터 다시 시작한다
+
+## sizeof
+byte 단위로 자료형의 크기를 구할 수 있다.
+
+sizeof 표현식 / sizeof(표현식): 변수, 배열 등  
+sizeof(자료형)
+
+```
+sizeof(int)
+sizeof(num1)
+sizeof num1
+```
