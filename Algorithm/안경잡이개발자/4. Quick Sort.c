@@ -51,10 +51,65 @@ Quick Sort는 특정한 pivot값을 지정해서 pviot 값을 기준으로 원�
 	{1 2}, {3 4 5}, {6 7 8}, {9 10} 각각의 소요시간의 합: = 4 + 9 + 9 + 4 = 26 
 
 */
+int data3[10] = {3, 7, 8, 1, 5, 9, 6, 10, 2, 4};
+int data2[10] = {1,3,2,4,5,6,7,8,9,10};
+int data[10] = {10,9,8,7,6,5,4,3,2,1};
 int main(void) {
+	printData();
+	quickSort(data, 0, 9);
+	int i;
+	printData();
+}
+
+void printData() {
+	int i;
+	for(i = 0; i<10; i++) printf("%d ", data[i]);
+	printf("\n");
+}
+
+void quickSort(int data[], int begin, int end) {
+	printf("%d ~ %d\n", begin, end);
+	if(begin >= end) return;
+	int pivot = data[begin];
+	int left = begin+1, right = end;
+	while(left <= end && left < right) {
+		// find big
+		while(left <= end && data[left] < pivot) left++;
+		printf("left: %d\n", left);
+		// find small
+		while(right>=begin && data[right] > pivot) {
+			right--;
+		}
+		
+		printf("right: %d\n", right);
+		if(left < right) {
+			// con1. 교차X
+			swap(data, left, right); printData();
+			continue;
+		} else if (right==begin) {
+			// con2. R-X
+			quickSort(data, begin+1, end);
+			quickSort(data, begin, left-1);
+		} else if (left==end+1){
+			// con3. L-X
+			swap(data, begin, end); printData();
+			
+			quickSort(data, begin, end-1);
+		} else {
+			// con4. 교차
+			swap(data, right, begin); printData();
+			quickSort(data, begin, left-1);
+			quickSort(data, left+1, end);
+		}
+		return;
+	}
+	
+	
 	
 }
 
-void quickSort(int[] arr, int begin, int end) {
-	
+void swap(int arr[], int index1, int index2) {
+	int temp = arr[index1];
+	arr[index1] = arr[index2];
+	arr[index2] = temp;
 }
