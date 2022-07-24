@@ -52,3 +52,40 @@ num1 &= 2;
 num1 |= 2;
 num1 ^= 2;
 ```
+
+## 심사 문제
+표준 입력으로 두 정수(unsigned int)가 입력됩니다. 입력된 두 정수의 비트 연산 결과를 각 줄에 출력하는 프로그램을 만드세요(scanf 함수 호출 전에 문자열을 출력하면 안 됩니다).
+
+num1과 num2을 비트 XOR 연산
+num1과 num2을 비트 OR 연산
+num1과 num2를 비트 AND 연산
+num1을 비트 NOT 연산
+출력 결과는 서식 지정자 %u를 사용하세요.
+
+정답에는 C 언어 컴파일러에서 정상적으로 컴파일되는 전체 코드를 입력해야 합니다.
+
+### 내 답안
+``` c
+#include <stdio.h>
+
+int main(void) {
+    unsigned int a,b;
+    scanf("%u %u", &a, &b);
+    printf("%u\n%u\n%u\n%u\n", a^b, a|b, a&b, ~a);
+}
+```
+-----
+표준 입력으로 정수가 입력됩니다. 입력된 정수를 왼쪽으로 20번, 오른쪽으로 4번 시프트 연산하여 결과를 출력하는 프로그램을 만드세요(scanf 함수 호출 전에 문자열을 출력하면 안 됩니다). 단, 정수형 변수는 unsigned long long으로 선언하고 출력 결과는 서식 지정자 %llu를 사용하세요.
+
+정답에는 C 언어 컴파일러에서 정상적으로 컴파일되는 전체 코드를 입력해야 합니다
+
+### 내 답안:
+``` c
+#include <stdio.h>
+
+int main(void) {
+    unsigned long long a;
+    scanf("%llu", &a);
+    printf("%llu", a << 20 >> 4);
+}
+```
