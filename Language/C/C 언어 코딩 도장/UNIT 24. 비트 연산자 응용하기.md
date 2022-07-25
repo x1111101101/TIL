@@ -16,8 +16,10 @@ int main(void) {
 0000 1010을 왼쪽으로 2칸 Shift -> 0000 0010
 
 ## MSB, LSB
-- Most Significant Bit: 가장 왼쪽 비트
+- Most Significant Bit: 가장 왼쪽 비트(부호 비트)
 - Least Significant Bit: 가장 오른쪽 비트
+
+
 
 
 
