@@ -9,3 +9,5 @@
 - null safety
 - null 단축 문법 (.?)
 - final
+- late
+- const
