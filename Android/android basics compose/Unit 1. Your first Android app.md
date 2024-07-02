@@ -366,3 +366,5 @@ fun Preview() {
 }
 ```
 
+- Modifier#weight
+
