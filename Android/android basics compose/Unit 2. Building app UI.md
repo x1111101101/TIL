@@ -146,4 +146,10 @@ fun Panel(step: Step, onClick: ()->Unit, modifier: Modifier = Modifier) {
 }
 ```
 
-## Use the debugger in Android Studio
+# Interact with UI and state
+## Intro to state in Compose
+- Compose
+- Composition
+- Compose, Composition, Composable, State 들의 관계, Recomposition
+- remember()
+- 
