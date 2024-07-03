@@ -53,3 +53,97 @@ fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
     }
 }
 ```
+- 참고용: https://developer.android.com/develop/ui/compose/documentation?_gl=1*llf95a*_up*MQ..*_ga*MTg2MDU4NzQ2Ni4xNzE5OTk5NTMz*_ga_6HH9YJMN9M*MTcyMDAxMTIyMC4yLjAuMTcyMDAxMTIyMC4wLjAuMA..
+
+## Use the debugger in Android Studio
+There are two ways to run the debugger alongside your app:
+
+Attach the debugger to an existing app process that runs on a device or emulator.
+Run the app with the debugger.
+
+
+## Practice: Click behavior
+``` kotlin
+data class Step(val name: String, val imageResource: Painter, val text: String)
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+            Tutorial2Theme {
+                App(Modifier.fillMaxSize())
+            }
+        }
+    }
+}
+
+
+@Composable
+@Preview(showSystemUi = true)
+fun App(modifier: Modifier = Modifier) {
+    val steps = arrayOf(
+        Step("pickup", painterResource(id = R.drawable.lemon_tree), "Pickup"),
+        Step("squeeze", painterResource(id = R.drawable.lemon_squeeze), "Squeeze"),
+        Step("drink", painterResource(id = R.drawable.lemon_drink), "Drink"),
+        Step("restart", painterResource(id = R.drawable.lemon_restart), "Restart")
+    )
+    var stepId by remember { mutableIntStateOf(0) }
+    val step = steps[stepId]
+    val onClick: ()->Unit = if(stepId == 1) {
+        var left = (2..4).random();
+        {
+            if(--left == 0) {
+                stepId++
+            }
+        }
+    } else {
+        {
+            stepId = (stepId+1)%steps.size
+        }
+    }
+    Panel(step = step, onClick,
+        modifier
+            .wrapContentSize()
+    )
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun Panel(step: Step, onClick: ()->Unit, modifier: Modifier = Modifier) {
+    Scaffold(
+        modifier = modifier
+            .fillMaxSize(),
+        topBar = {
+            CenterAlignedTopAppBar(
+                title = {
+                    Text(
+                        text = "Lemonade",
+                        fontWeight = FontWeight.Bold
+                    )
+                },
+                colors = TopAppBarDefaults.largeTopAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.primaryContainer
+                )
+            )
+        }
+    ) { innerPadding->
+        Surface(Modifier.padding(innerPadding)) {
+            Column(modifier, horizontalAlignment = Alignment.CenterHorizontally) {
+                Button(
+                    colors = ButtonDefaults.buttonColors(containerColor = Color(50, 205, 50, 60)),
+                    shape = RoundedCornerShape(28.dp),
+                    modifier = Modifier,
+                    onClick = onClick
+                ) {
+                    Image(painter = step.imageResource, contentDescription = step.name)
+                }
+
+                Text(text = step.text, fontSize = 18.sp, modifier = Modifier.padding(top = 20.dp))
+            }
+        }
+    }
+}
+```
+
+## Use the debugger in Android Studio
