@@ -148,8 +148,92 @@ fun Panel(step: Step, onClick: ()->Unit, modifier: Modifier = Modifier) {
 
 # Interact with UI and state
 ## Intro to state in Compose
+- state
 - Compose
 - Composition
 - Compose, Composition, Composable, State 들의 관계, Recomposition
 - remember()
-- 
+- state hoisting
+- stateless composable
+---
+You should hoist the state when you need to:
+- Share the state with multiple composable functions.
+- Create a stateless composable that can be reused in your app.
+---
+- stringResource()
+``` kotlin
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        enableEdgeToEdge()
+        super.onCreate(savedInstanceState)
+        setContent {
+            TipTimeTheme {
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                ) {
+                    TipTimeLayout()
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun EditNumberField(value: String, onValueChanged: (String)->Unit, modifier: Modifier = Modifier) {
+    TextField(
+        label = { Text(stringResource(R.string.bill_amount)) },
+        singleLine = true,
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+        value = value,
+        onValueChange = onValueChanged,
+        modifier = modifier
+    )
+}
+
+@Composable
+fun TipTimeLayout() {
+    var amountInput by remember { mutableStateOf("") }
+
+    Column(
+        modifier = Modifier
+            .statusBarsPadding()
+            .padding(horizontal = 40.dp)
+            .safeDrawingPadding(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        Text(
+            text = stringResource(R.string.calculate_tip),
+            modifier = Modifier
+                .padding(bottom = 16.dp, top = 40.dp)
+                .align(alignment = Alignment.Start)
+        )
+        EditNumberField(amountInput, { if(it.isEmpty() || it.toDoubleOrNull() != null) amountInput = it})
+        Text(
+            text = stringResource(R.string.tip_amount,
+                calculateTip(amountInput.toDoubleOrNull() ?: 0.0)
+            ),
+            style = MaterialTheme.typography.displaySmall
+        )
+        Spacer(modifier = Modifier.height(150.dp))
+    }
+}
+
+/**
+ * Calculates the tip based on the user input and format the tip amount
+ * according to the local currency.
+ * Example would be "$10.00".
+ */
+private fun calculateTip(amount: Double, tipPercent: Double = 15.0): String {
+    val tip = tipPercent / 100 * amount
+    return NumberFormat.getCurrencyInstance().format(tip)
+}
+
+@Preview(showBackground = true)
+@Composable
+fun TipTimeLayoutPreview() {
+    TipTimeTheme {
+        TipTimeLayout()
+    }
+}
+```
