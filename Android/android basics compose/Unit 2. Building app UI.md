@@ -237,3 +237,8 @@ fun TipTimeLayoutPreview() {
     }
 }
 ```
+
+## Calculate a custom tip
+- @StringRes
+- KeyboardOption
+- keyboard action
