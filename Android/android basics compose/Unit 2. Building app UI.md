@@ -245,3 +245,12 @@ fun TipTimeLayoutPreview() {
 - keyboard action
 - portrait and landscape
 - scroll
+
+## Write automated tests
+- what is testing for software
+- automated testing
+why automated testing is required:
+- ensure functionalities
+- cost in manual testing
+- different type of devices
+- 
