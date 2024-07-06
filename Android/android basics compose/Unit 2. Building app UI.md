@@ -240,5 +240,8 @@ fun TipTimeLayoutPreview() {
 
 ## Calculate a custom tip
 - @StringRes
+- @DrawableRes
 - KeyboardOption
 - keyboard action
+- portrait and landscape
+- scroll
