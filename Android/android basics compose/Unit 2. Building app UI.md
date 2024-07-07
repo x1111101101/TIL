@@ -306,3 +306,134 @@ class TipUITests {
 
 }
 ```
+## Create an Art Space app
+- https://m3.material.io/foundations/layout/understanding-layout/overview
+Use your prototype to help translate your design into code:
+- Identify UI elements needed to build your app.
+- Identify different logical sections of the apps and draw boundaries around them.
+---
+- https://developer.android.com/develop/ui/compose/layouts/adaptive/support-different-screen-sizes
+``` kotlin
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+            App()
+        }
+    }
+}
+
+data class ArtworkDescription(val title: String, val year: String, val artist: String)
+data class Artwork(@DrawableRes val image: Int, val description: ArtworkDescription)
+val ARTWORKS = listOf(
+    Artwork(
+        R.drawable.cat_8612685_1280,
+        ArtworkDescription("Cat", "2024", "Artist1")
+    ),
+    Artwork(
+        R.drawable.cookies_8668140_1280,
+        ArtworkDescription("Cookies", "2023", "baker")
+    )
+)
+
+@Preview(showSystemUi = true)
+@Composable
+fun App(modifier: Modifier = Modifier) {
+    var artworkId by remember { mutableIntStateOf(0) }
+    val artwork = ARTWORKS[artworkId]
+    val description = artwork.description
+    Tutorial3Theme {
+        Scaffold(modifier= Modifier
+            .fillMaxSize()) { innerPadding->
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(innerPadding)
+                    .verticalScroll(rememberScrollState()),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.SpaceEvenly
+            ) {
+                Artwork(resource = artwork.image,
+                    modifier = Modifier
+                        .weight(0.45f)
+                        .fillMaxWidth(0.9f)
+                )
+                Spacer(modifier = Modifier.weight(0.05f))
+                Informations(
+                    ArtworkDescription(description.title, description.year, description.artist),
+                    Modifier
+                        .fillMaxWidth(0.8f)
+                        .weight(0.1f)
+                        .background(Color.LightGray)
+                )
+                Spacer(modifier = Modifier.weight(0.05f))
+                Controls(
+                    prev = {
+                        artworkId = (artworkId + ARTWORKS.size-1) % ARTWORKS.size
+                    },
+                    next = {
+                        artworkId = (artworkId + 1) % ARTWORKS.size
+                    },
+                    Modifier
+                        .fillMaxWidth(0.8f)
+                        .height(52.dp)
+                        .padding(bottom = 12.dp)
+                )
+            }
+        }
+
+    }
+}
+
+@Composable
+fun Artwork(@DrawableRes resource: Int, modifier: Modifier = Modifier) {
+    val painter = painterResource(id = resource)
+    Surface(
+        modifier=modifier
+        ,
+        shadowElevation = 16.dp
+    ) {
+        Image(painter = painter, contentDescription = "artwork", Modifier.padding(20.dp))
+    }
+
+}
+
+@Composable
+fun Informations(description: ArtworkDescription, modifier: Modifier = Modifier) {
+    Column(
+        modifier,
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        Text(text = description.title)
+        Row(horizontalArrangement = Arrangement.SpaceBetween) {
+            Text(text = description.artist)
+            Text(text = "(${description.year})")
+        }
+    }
+}
+
+@Composable
+fun Controls(prev: ()->Unit, next: ()->Unit, modifier: Modifier = Modifier) {
+    @Composable
+    fun ButtonText(text: String) {
+        Text(text = text)
+    }
+    Row(modifier, horizontalArrangement = Arrangement.SpaceEvenly) {
+        Button(
+            modifier = Modifier.weight(0.3f),
+            onClick = prev
+        ) {
+            ButtonText(text = "Previous")
+        }
+        Spacer(modifier = Modifier.weight(0.2f))
+        Button(
+            modifier = Modifier.weight(0.3f),
+            onClick = next
+        ) {
+            ButtonText(text = "Next")
+        }
+    }
+}
+```
