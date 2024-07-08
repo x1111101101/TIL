@@ -95,3 +95,86 @@ fun AffirmationCard(affirmation: Affirmation, modifier: Modifier = Modifier) {
 - legacy launcher icons
 - Image Asset Studio
 - 
+## Build a grid
+- Arrangement.spacedBy()
+- LazyVerticalGrid
+``` kotlin
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+            App()
+        }
+    }
+}
+
+@Composable
+@Preview(showSystemUi = true)
+fun App(modifier: Modifier = Modifier) {
+    BuildAGridTheme {
+        Surface(
+            modifier
+                .fillMaxSize()
+                .statusBarsPadding()
+        ) {
+            TopicColumn(
+                topics = DataSource.topics,
+                Modifier.padding(8.dp)
+            )
+        }
+    }
+}
+
+@Composable
+fun TopicColumn(topics: List<Topic>, modifier: Modifier = Modifier) {
+    LazyVerticalGrid(
+        columns = GridCells.Fixed(2),
+        verticalArrangement = Arrangement.spacedBy(8.dp),
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
+        modifier = modifier
+    ) {
+        items(items= topics) {
+            TopicCard(
+                topic = it
+            )
+        }
+    }
+
+}
+
+@Composable
+fun TopicCard(topic: Topic, modifier: Modifier = Modifier) {
+    Card(
+        modifier
+    ) {
+        Row(
+            modifier = Modifier
+        ) {
+            Image(
+                painter = painterResource(id = topic.image),
+                contentDescription = null,
+                contentScale = ContentScale.Crop,
+                modifier = Modifier.size(68.dp)
+            )
+            Column(
+                verticalArrangement = Arrangement.spacedBy(8.dp),
+                modifier = Modifier.padding(start=16.dp, top=16.dp, end=16.dp)
+            ) {
+                Text(
+                    text = stringResource(id = topic.name),
+                    style = MaterialTheme.typography.bodyMedium,
+                    modifier = Modifier.fillMaxWidth()
+                )
+                Row(
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Icon(painter = painterResource(id = R.drawable.ic_grain), contentDescription = null)
+                    Text(text = topic.cources.toString(), Modifier.padding(start=9.dp), style = MaterialTheme.typography.labelMedium)
+                }
+            }
+        }
+    }
+
+}
+```
