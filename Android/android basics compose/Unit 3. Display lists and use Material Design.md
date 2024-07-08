@@ -78,3 +78,9 @@ fun AffirmationCard(affirmation: Affirmation, modifier: Modifier = Modifier) {
     }
 }
 ```
+# Change the app icon
+- launcher icon
+- adaptive icons 
+- Image Asset Studio
+- screen density
+- 
