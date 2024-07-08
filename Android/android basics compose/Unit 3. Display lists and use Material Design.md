@@ -78,9 +78,20 @@ fun AffirmationCard(affirmation: Affirmation, modifier: Modifier = Modifier) {
     }
 }
 ```
-# Change the app icon
+## Change the app icon
 - launcher icon
 - adaptive icons 
 - Image Asset Studio
 - screen density
+- mipmap folder
+- density qualifier
+- Note that device screen densities won't be precisely 160 dpi, 240 dpi, 320 dpi, etc. Based on the device's screen density, Android selects the resource at the closest larger density bucket and then scales it down.
+- adaptive icon - foreground, background, mask
+- mipmap-anydpi-v26
+- bitmap vs vector: The advantage is that a vector graphic can be scaled for any canvas size, for any screen density, without losing quality.
+- 참고: https://developer.android.com/reference/kotlin/android/graphics/drawable/AdaptiveIconDrawable
+- safe zone
+- backwards compatibility
+- legacy launcher icons
+- Image Asset Studio
 - 
