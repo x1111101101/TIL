@@ -178,3 +178,8 @@ fun TopicCard(topic: Topic, modifier: Modifier = Modifier) {
 
 }
 ```
+# Build beautiful apps
+## Material Theming with Jetpack Compose
+- color palette
+- Typography
+- Theme file
