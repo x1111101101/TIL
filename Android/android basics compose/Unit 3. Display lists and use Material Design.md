@@ -193,4 +193,9 @@ fun TopicCard(topic: Topic, modifier: Modifier = Modifier) {
 - Force Dark
 - accessibility contrast standards(https://webaim.org/resources/contrastchecker/)
 - Dynamic Color
+- shape
+- RoundedCornerShape
+- Shape.kt file
+- shape categories(https://m3.material.io/styles/shape/shape-scale-tokens#b09934f1-1b0f-4ce4-ade6-4a1f138add6c)
+- Crop Modifier
 
