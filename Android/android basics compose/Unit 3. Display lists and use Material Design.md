@@ -183,3 +183,14 @@ fun TopicCard(topic: Topic, modifier: Modifier = Modifier) {
 - color palette
 - Typography
 - Theme file
+- color scheme
+- hex color code, alpha
+### Use Material Theme Builder to create a color scheme
+- https://material-foundation.github.io/material-theme-builder/
+---
+- card
+- dimens file
+- Force Dark
+- accessibility contrast standards(https://webaim.org/resources/contrastchecker/)
+- Dynamic Color
+
