@@ -197,5 +197,9 @@ fun TopicCard(topic: Topic, modifier: Modifier = Modifier) {
 - RoundedCornerShape
 - Shape.kt file
 - shape categories(https://m3.material.io/styles/shape/shape-scale-tokens#b09934f1-1b0f-4ce4-ade6-4a1f138add6c)
-- Crop Modifier
+    - ![image](https://github.com/x1111101101/TIL/assets/97117787/6f41c5aa-fac8-4f3f-87ef-c88958edc6ee)
+- Image Compose - ContentScale - Crop Modifier
+- The Material Design type scale
+- type scale - grouping: display, headline, title, body, label
+- applying custom fonts
 
