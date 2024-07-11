@@ -369,5 +369,3 @@ fun WoofDarkThemePreview() {
 - Spring Animation
     - Damping ratio
     - Stiffness level
-![image](https://github.com/x1111101101/TIL/assets/97117787/780dbc85-734b-4af2-9f30-6872506cea11)
-(https://developer.android.com/courses/android-basics-compose)
