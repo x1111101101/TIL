@@ -202,4 +202,8 @@ fun TopicCard(topic: Topic, modifier: Modifier = Modifier) {
 - The Material Design type scale
 - type scale - grouping: display, headline, title, body, label
 - applying custom fonts
+- Scaffold
+- TopAppBar
+- Window Insets
+![image](https://github.com/x1111101101/TIL/assets/97117787/c1c3d864-7148-43f0-be1e-3af7ab345149)
 
