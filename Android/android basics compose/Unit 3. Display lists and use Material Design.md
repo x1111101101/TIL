@@ -358,6 +358,16 @@ fun WoofDarkThemePreview() {
 ```
 ![image](https://github.com/x1111101101/TIL/assets/97117787/c1c3d864-7148-43f0-be1e-3af7ab345149)
 
-# Simple Animation with Jetpack Compose
-
-
+## Simple Animation with Jetpack Compose
+### Add 'Expand more' Icon
+- Material Design provides a number of icons, arranged in common categories, for most of your needs.
+- Modifier.weight()
+    - If the children don't have assigned weights, (weight is an optional parameter), then the child composable's height/width would default to wrap content (wrapping the contents of what's inside the UI element).
+- Android Studio Preview - interactive mode
+### Add Animation
+- Animations can add visual cues that notify users about what's going on in your app.
+- Spring Animation
+    - Damping ratio
+    - Stiffness level
+![image](https://github.com/x1111101101/TIL/assets/97117787/780dbc85-734b-4af2-9f30-6872506cea11)
+(https://developer.android.com/courses/android-basics-compose)
