@@ -3,3 +3,8 @@ Learn the best practices of app architecture to build more complex apps. Enhance
 
 # Architecture Components
 ## Stages of the Activity lifecycle
+![image](https://github.com/user-attachments/assets/be2dcc30-50b9-4b7f-ac39-5bab90052cb1)
+(https://developer.android.com/codelabs/basic-android-kotlin-compose-activity-lifecycle)
+
+- onCreate()
+- LogCat
