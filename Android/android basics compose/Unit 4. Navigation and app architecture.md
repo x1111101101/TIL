@@ -45,3 +45,24 @@ var currentDessertImageId by remember {
 ## Architecture: The UI Layer
 - View Model, UI Elements
 - event and state
+## ViewModel and State in Compose
+- App architecture
+- 참고: https://developer.android.com/topic/architecture
+- ViewModel
+- OutlinedTextField
+- AlertDialog
+### Learn about app architecture
+An app's architecture provides guidelines to help you allocate the app responsibilities between the classes. 
+The most common architectural principles are separation of concerns and driving UI from a model.
+- Separation of concerns
+- Drive UI from a model
+- Model
+
+### Recommended app architecture
+![image](https://github.com/user-attachments/assets/959dbc0c-259d-4b20-b1d3-ce6e7b139fff)
+(https://developer.android.com/codelabs/basic-android-kotlin-compose-viewmodel-and-state)
+여기서 화살표는 클래스의 의존성을 나타낸다.
+
+
+
+
