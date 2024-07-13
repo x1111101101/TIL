@@ -76,7 +76,7 @@ data class NewsItemUiState(
     val bookmarked: Boolean = false,
     ...
 )
-``` kotlin
+```
 you should never modify the UI state in the UI directly, unless the UI itself is the sole source of its data.
 Violating this principle results in multiple sources of truth for the same piece of information, leading to data inconsistencies and subtle bugs.
 - StateFlow
@@ -97,7 +97,7 @@ In Compose, the only way to update the UI is by changing the state of the app. W
 ![image](https://github.com/user-attachments/assets/6df7cc1e-fab1-40ab-bbb2-0aeff89c7d60)
 (https://developer.android.com/codelabs/basic-android-kotlin-compose-viewmodel-and-state)
 The use of the UDF pattern for app architecture has the following implications:
-```
+``` kotlin
 The ViewModel holds and exposes the state the UI consumes.
 The UI state is application data transformed by the ViewModel.
 The UI notifies the ViewModel of user events.
