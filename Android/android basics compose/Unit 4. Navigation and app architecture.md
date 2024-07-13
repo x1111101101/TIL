@@ -15,4 +15,33 @@ Learn the best practices of app architecture to build more complex apps. Enhance
 - onDestory()
 - app's visible lifecycle
 - foreground lifetime
-- 
+- focus vs visibility
+- why you should keep the code in onPause() lightweight?
+- A configuration change
+### Lifecycle of a composable
+- composition
+- recomposition
+- State
+- MutableState
+- remember()
+- rememberSaveable()
+---
+```
+var dessertsSold by rememberSaveable { mutableStateOf(0) }
+var revenue by rememberSaveable { mutableStateOf(0) }
+
+val currentDessertIndex by rememberSaveable { mutableStateOf(0) }
+
+var currentDessertPrice by remember {
+    mutableStateOf(desserts[currentDessertIndex].price)
+}
+var currentDessertImageId by remember {
+    mutableStateOf(desserts[currentDessertIndex].imageId)
+}
+```
+## Intro to App architecture
+- ui layer, data layer
+- UDF pattern
+## Architecture: The UI Layer
+- View Model, UI Elements
+- event and state
