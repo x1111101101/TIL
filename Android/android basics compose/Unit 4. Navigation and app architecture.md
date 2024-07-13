@@ -814,3 +814,8 @@ private fun DessertsSoldInfo(dessertsSold: Int, modifier: Modifier = Modifier) {
     }
 }
 ```
+
+# Navigation in Jetpack Compose
+Learn how to use the Navigation component to build more complex apps with more screens and how to navigate and pass data between different composables.
+## Navigate between screens with Compose
+- system UI components 
