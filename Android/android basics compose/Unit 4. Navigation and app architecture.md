@@ -819,3 +819,10 @@ private fun DessertsSoldInfo(dessertsSold: Int, modifier: Modifier = Modifier) {
 Learn how to use the Navigation component to build more complex apps with more screens and how to navigate and pass data between different composables.
 ## Navigate between screens with Compose
 - system UI components 
+- reusable components
+
+The Navigation component has three main parts:  
+- NavController: Responsible for navigating between destinations—that is, the screens in your app.  
+- NavGraph: Maps composable destinations to navigate to.  
+- NavHost: Composable acting as a container for displaying the current destination of the NavGraph.  
+
