@@ -824,5 +824,16 @@ Learn how to use the Navigation component to build more complex apps with more s
 The Navigation component has three main parts:  
 - NavController: Responsible for navigating between destinations—that is, the screens in your app.  
 - NavGraph: Maps composable destinations to navigate to.  
-- NavHost: Composable acting as a container for displaying the current destination of the NavGraph.  
-
+- NavHost: Composable acting as a container for displaying the current destination of the NavGraph.
+![image](https://github.com/user-attachments/assets/6feb159d-04bc-458a-998f-aa34cceb50cf)
+(https://developer.android.com/codelabs/basic-android-kotlin-compose-navigation)
+- rememberNavController()
+- composable()
+- Context
+- A benefit of using a NavHost to handle your app's navigation is that navigation logic is kept separate from individual UI. This option avoids some of the major drawbacks of passing the navController as a parameter.
+    - Navigation logic is kept in one place, which can make your code easier to maintain and prevent bugs by not accidentally giving individual screens free reign of navigation in your app.
+    - In apps that need to work on different form factors (like portrait mode phone, foldable phone, or large screen tablet), a button may or may not trigger navigation, depending on the app's layout. **Individual screens should be self-contained and don't need to be aware of other screens in the app.**
+- back stack - system back button
+- popBackStack()
+- 
+ 
