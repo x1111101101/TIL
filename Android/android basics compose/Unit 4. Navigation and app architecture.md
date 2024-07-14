@@ -835,5 +835,14 @@ The Navigation component has three main parts:
     - In apps that need to work on different form factors (like portrait mode phone, foldable phone, or large screen tablet), a button may or may not trigger navigation, depending on the app's layout. **Individual screens should be self-contained and don't need to be aware of other screens in the app.**
 - back stack - system back button
 - popBackStack()
-- 
- 
+- ShareSheet
+- Intent
+- ACTION_SEND, putExtra()
+- startActivity()
+- NavController#currentBackStackEntryAsState
+- NavController#navigateUp
+Learn More
+- https://m2.material.io/design/navigation/understanding-navigation.html#types-of-navigation
+- https://developer.android.com/jetpack/compose/navigation
+- https://developer.android.com/codelabs/jetpack-compose-navigation
+- https://developer.android.com/guide/navigation/navigation-principles
