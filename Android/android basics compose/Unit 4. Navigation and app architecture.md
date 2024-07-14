@@ -1018,3 +1018,7 @@ private fun shareOrder(context: Context, subject: String, summary: String) {
     )
 }
 ```
+
+# Adapt for different screen sizes
+## Build an adaptive app with dynamic navigation
+### Change screens with state changes
