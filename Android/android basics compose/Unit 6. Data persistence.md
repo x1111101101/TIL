@@ -1,4 +1,5 @@
 # Use Room for data persistence
+## Persist Data with Room
 - Flow
 - Room
 - Entity
@@ -11,3 +12,8 @@
 - @Database
 - viewModelScope
 - Database Inspector
+
+## Read and update data with Room
+- collecting from a flow
+- StateFlow
+- stateIn operator
