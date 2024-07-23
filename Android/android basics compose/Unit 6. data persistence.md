@@ -1,0 +1,9 @@
+# Use Room for data persistence
+- Flow
+- Room
+- Entity
+- DAO
+- @Insert, @Delete, @Update
+- @Query
+- OnConflictStrategy
+- return type이 Flow인 DAO 사용 -> 한번만 호출해도 엔티티에 대한 변화 추적 가능(notification), Responsive 
