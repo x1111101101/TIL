@@ -144,7 +144,7 @@ class WorkManagerBluromaticRepository(context: Context) : BluromaticRepository {
     }
 }
 ```
-```
+``` kotlin
 package com.example.bluromatic.workers
 
 import androidx.work.CoroutineWorker
@@ -213,3 +213,11 @@ class BlurWorker(ctx: Context, params: WorkerParameters) : CoroutineWorker(ctx, 
     }
 }
 ```
+
+## Advanced WorkManager and Testing
+- unique work sequences.
+- beginUniqueWork()
+- ExistingWorkPolicy
+- WorkInfo
+- LiveData
+- Tagging the work
