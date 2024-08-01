@@ -221,3 +221,7 @@ class BlurWorker(ctx: Context, params: WorkerParameters) : CoroutineWorker(ctx, 
 - WorkInfo
 - LiveData
 - Tagging the work
+- Flow
+- cold Flow, hot Flow, stateIn()
+- WorkManager#cancelUniqueWork
+- 
